@@ -1,0 +1,455 @@
+<!DOCTYPE html>
+<html lang="id" class="h-100">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Adopsi Bikini Bottom</title>
+    <link
+      href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/css/bootstrap.min.css"
+      rel="stylesheet"
+    />
+    <style>
+      :root {
+        --bb-pastel-yellow: #fff9c4;
+        --bb-pastel-blue: #b3cffc;
+        --bb-pastel-coral: #ffb6c1;
+        --bb-pastel-sea: #282e4a;
+        --bb-pastel-gray: #f5f5f5;
+      }
+
+      body {
+        background-color: var(--bb-pastel-gray);
+      }
+
+      .carousel-item {
+        height: 70vh;
+        min-height: 400px;
+      }
+      .carousel-item img {
+        height: 100%;
+        object-fit: cover;
+        object-position: center;
+      }
+      .card-img-top {
+        height: 250px;
+        object-fit: cover;
+      }
+
+      .hover-effect {
+        transition: transform 0.3s ease, box-shadow 0.3s ease;
+      }
+      .hover-effect:hover {
+        transform: translateY(-5px);
+        box-shadow: 0 8px 16px rgba(0, 0, 0, 0.1) !important;
+      }
+
+      /* Custom Components */
+      .navbar-bb {
+        background: linear-gradient(
+          135deg,
+          var(--bb-pastel-sea),
+          var(--bb-pastel-blue)
+        );
+        border-bottom: 3px solid var(--bb-pastel-yellow);
+      }
+
+      .btn-bb {
+        background-color: var(--bb-pastel-coral);
+        border-color: var(--bb-pastel-coral);
+        color: #fff;
+      }
+      .btn-bb:hover {
+        background-color: #ffa8b5;
+        border-color: #ffa8b5;
+      }
+
+      .section-header {
+        color: var(--bb-pastel-sea);
+        text-shadow: 2px 2px 4px rgba(0, 0, 0, 0.1);
+      }
+
+      .card-bb {
+        background-color: white;
+        border: 2px solid var(--bb-pastel-sea);
+        border-radius: 15px;
+      }
+
+      .water-bubble {
+        background: rgba(179, 229, 252, 0.2);
+        border-radius: 20px;
+        backdrop-filter: blur(5px);
+      }
+
+      .footer-text {
+        color: var(--bb-pastel-gray) !important;
+        opacity: 0.9;
+      }
+    </style>
+  </head>
+  <body
+    class="d-flex flex-column h-100"
+    data-bs-spy="scroll"
+    data-bs-target="#mainNav"
+    data-bs-offset="70"
+  >
+    <!-- Navbar -->
+    <nav
+      class="navbar navbar-expand-lg navbar-dark fixed-top navbar-bb shadow-sm"
+      id="mainNav"
+    >
+      <div class="container">
+        <a class="navbar-brand fw-bold" href="#">
+          <img src="assets/logo.png" alt="Logo" width="40" class="me-2" />
+          Bikini Bottom
+        </a>
+        <button
+          class="navbar-toggler"
+          type="button"
+          data-bs-toggle="collapse"
+          data-bs-target="#navbarContent"
+        >
+          <span class="navbar-toggler-icon"></span>
+        </button>
+        <div class="collapse navbar-collapse" id="navbarContent">
+          <ul class="navbar-nav ms-auto">
+            <li class="nav-item">
+              <a class="nav-link active" href="#home">Home</a>
+            </li>
+            <li class="nav-item">
+              <a class="nav-link" href="#characters">Karakter</a>
+            </li>
+            <li class="nav-item">
+              <a class="nav-link" href="#about">Tentang</a>
+            </li>
+            <li class="nav-item">
+              <a class="nav-link" href="#contact">Kontak</a>
+            </li>
+          </ul>
+        </div>
+      </div>
+    </nav>
+
+    <!-- Carousel -->
+    <div
+      id="mainCarousel"
+      class="carousel slide mt-5 pt-4"
+      data-bs-ride="carousel"
+    >
+      <div class="carousel-inner">
+        <div class="carousel-item active">
+          <img
+            src="assets/spongebob.png"
+            class="d-block w-100"
+            alt="SpongeBob"
+          />
+          <div class="carousel-caption d-none d-md-block water-bubble p-4">
+            <h3 class="text-dark">SpongeBob SquarePants</h3>
+            <p class="text-muted mb-0">Koki Abadi Krusty Krab</p>
+          </div>
+        </div>
+
+        <div class="carousel-item">
+          <img src="assets/petrik.png" class="d-block w-100" alt="Patrick" />
+          <div class="carousel-caption d-none d-md-block water-bubble p-4">
+            <h3 class="text-dark">Patrick Star</h3>
+            <p class="text-muted mb-0">
+              Sipaling slow living kerjaannya main sama makan doang
+            </p>
+          </div>
+        </div>
+
+        <div class="carousel-item">
+          <img src="assets/squid.png" class="d-block w-100" alt="Squidward" />
+          <div class="carousel-caption d-none d-md-block water-bubble p-4">
+            <h3 class="text-dark">Squidward Tentacle</h3>
+            <p class="text-muted mb-0">Kasir moody an, flatty</p>
+          </div>
+        </div>
+
+        <div class="carousel-item">
+          <img src="assets/mrcrab.png" class="d-block w-100" alt="Mr. Krabs" />
+          <div class="carousel-caption d-none d-md-block water-bubble p-4">
+            <h3 class="text-dark">Mr. Crab</h3>
+            <p class="text-muted mb-0">Mata duitan, bisa buat alat cari duit</p>
+          </div>
+        </div>
+      </div>
+
+      <button
+        class="carousel-control-prev"
+        type="button"
+        data-bs-target="#mainCarousel"
+        data-bs-slide="prev"
+      >
+        <span class="carousel-control-prev-icon" aria-hidden="true"></span>
+        <span class="visually-hidden">Previous</span>
+      </button>
+      <button
+        class="carousel-control-next"
+        type="button"
+        data-bs-target="#mainCarousel"
+        data-bs-slide="next"
+      >
+        <span class="carousel-control-next-icon" aria-hidden="true"></span>
+        <span class="visually-hidden">Next</span>
+      </button>
+    </div>
+
+    <!-- Main Content -->
+    <main class="flex-shrink-0">
+      <!-- Home Section -->
+      <section id="home" class="py-5">
+        <div class="container py-5">
+          <div class="water-bubble p-5 text-center">
+            <h1 class="display-5 fw-bold mb-4 section-header">
+              🌊 Adopsi Karakter Bikini Bottom 🌊
+            </h1>
+            <p class="lead mb-4 text-muted">
+              Temukan teman bawah laut favoritmu dan bawa pulang dia ke dunia
+              kalian!
+            </p>
+            <a href="#characters" class="btn btn-bb btn-lg px-4">
+              🐠 Jelajahi Karakter
+            </a>
+          </div>
+        </div>
+      </section>
+
+      <!-- Characters Section -->
+      <section id="characters" class="py-5 bg-white">
+        <div class="container py-5">
+          <h2 class="text-center mb-5 section-header">
+            🐚 Pilihan Karakter 🐚
+          </h2>
+          <div class="row g-4">
+            <!-- SpongeBob Card -->
+            <div class="col-12 col-sm-6 col-lg-4 col-xl-3">
+              <div class="card h-100 hover-effect card-bb">
+                <img
+                  src="assets/spongebob.png"
+                  class="card-img-top"
+                  alt="SpongeBob"
+                />
+                <div class="card-body text-center">
+                  <h5 class="card-title fw-bold text-primary">SpongeBob</h5>
+                  <p class="card-text text-muted">Koki Abadi</p>
+                  <a href="#contact" class="btn btn-bb stretched-link"
+                    >Adopsi</a
+                  >
+                </div>
+              </div>
+            </div>
+
+            <!-- Patrick Card -->
+            <div class="col-12 col-sm-6 col-lg-4 col-xl-3">
+              <div class="card h-100 hover-effect card-bb">
+                <img
+                  src="assets/petrik.png"
+                  class="card-img-top"
+                  alt="Patrick"
+                />
+                <div class="card-body text-center">
+                  <h5 class="card-title fw-bold text-primary">Patrick</h5>
+                  <p class="card-text text-muted">Bintang Mageran</p>
+                  <a href="#contact" class="btn btn-bb stretched-link"
+                    >Adopsi</a
+                  >
+                </div>
+              </div>
+            </div>
+
+            <div class="col-12 col-sm-6 col-lg-4 col-xl-3">
+              <div class="card h-100 hover-effect card-bb">
+                <img
+                  src="assets/squid.png"
+                  class="card-img-top"
+                  alt="Patrick"
+                />
+                <div class="card-body text-center">
+                  <h5 class="card-title fw-bold text-primary">Squidward</h5>
+                  <p class="card-text text-muted">Sok cuek</p>
+                  <a href="#contact" class="btn btn-bb stretched-link"
+                    >Adopsi</a
+                  >
+                </div>
+              </div>
+            </div>
+
+            <div class="col-12 col-sm-6 col-lg-4 col-xl-3">
+              <div class="card h-100 hover-effect card-bb">
+                <img
+                  src="assets/mrcrab.png"
+                  class="card-img-top"
+                  alt="Patrick"
+                />
+                <div class="card-body text-center">
+                  <h5 class="card-title fw-bold text-primary">Mr. Crab</h5>
+                  <p class="card-text text-muted">Bos jahat</p>
+                  <a href="#contact" class="btn btn-bb stretched-link"
+                    >Adopsi</a
+                  >
+                </div>
+              </div>
+            </div>
+
+            <div class="col-12 col-sm-6 col-lg-4 col-xl-3">
+              <div class="card h-100 hover-effect card-bb">
+                <img
+                  src="assets/sandy.png"
+                  class="card-img-top"
+                  alt="Patrick"
+                />
+                <div class="card-body text-center">
+                  <h5 class="card-title fw-bold text-primary">Sandy</h5>
+                  <p class="card-text text-muted">Icon science</p>
+                  <a href="#contact" class="btn btn-bb stretched-link"
+                    >Adopsi</a
+                  >
+                </div>
+              </div>
+            </div>
+
+            <div class="col-12 col-sm-6 col-lg-4 col-xl-3">
+              <div class="card h-100 hover-effect card-bb">
+                <img
+                  src="assets/plankton.png"
+                  class="card-img-top"
+                  alt="Patrick"
+                />
+                <div class="card-body text-center">
+                  <h5 class="card-title fw-bold text-primary">Plankton</h5>
+                  <p class="card-text text-muted">kang nyolong</p>
+                  <a href="#contact" class="btn btn-bb stretched-link"
+                    >Adopsi</a
+                  >
+                </div>
+              </div>
+            </div>
+
+            <div class="col-12 col-sm-6 col-lg-4 col-xl-3">
+              <div class="card h-100 hover-effect card-bb">
+                <img src="assets/gary.png" class="card-img-top" alt="Patrick" />
+                <div class="card-body text-center">
+                  <h5 class="card-title fw-bold text-primary">Gary</h5>
+                  <p class="card-text text-muted">Siput lemot bgt</p>
+                  <a href="#contact" class="btn btn-bb stretched-link"
+                    >Adopsi</a
+                  >
+                </div>
+              </div>
+            </div>
+
+            <div class="col-12 col-sm-6 col-lg-4 col-xl-3">
+              <div class="card h-100 hover-effect card-bb">
+                <img
+                  src="assets/pearl.png"
+                  class="card-img-top"
+                  alt="Patrick"
+                />
+                <div class="card-body text-center">
+                  <h5 class="card-title fw-bold text-primary">Pearl</h5>
+                  <p class="card-text text-muted">Paus Centil</p>
+                  <a href="#contact" class="btn btn-bb stretched-link"
+                    >Adopsi</a
+                  >
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+      </section>
+
+      <!-- About Section -->
+      <section
+        id="about"
+        class="py-5"
+        style="background-color: var(--bb-pastel-blue)"
+      >
+        <div class="container py-5">
+          <div class="row align-items-center g-5">
+            <div class="col-lg-6">
+              <h2 class="fw-bold mb-4 section-header">📖 Tentang Kami</h2>
+              <p class="lead text-muted">
+                Sejak 1999, kami membantu para penggemar aloners untuk
+                mengadopsi karakter favorit mereka. Lebih dari 100 juta karakter
+                telah menemukan rumah digital! (rmh g sll rumah bentuknya, bs
+                jadi batu - petrik)
+              </p>
+            </div>
+            <div class="col-lg-6">
+              <div class="row g-3">
+                <div class="col-6">
+                  <img
+                    src="assets/group.png"
+                    class="img-fluid rounded-3 shadow-sm"
+                    alt="Group"
+                  />
+                </div>
+                <div class="col-6">
+                  <img
+                    src="assets/image.png"
+                    class="img-fluid rounded-3 shadow-sm"
+                    alt="Image"
+                  />
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+      </section>
+
+      <!-- Contact Section -->
+      <section id="contact" class="py-5">
+        <div class="container py-5">
+          <div class="water-bubble p-5">
+            <h2 class="text-center mb-5 section-header">
+              📬 Jadi Mau Adopsi Siapa?
+            </h2>
+            <div class="row justify-content-center">
+              <div class="col-lg-8">
+                <form>
+                  <div class="row g-3">
+                    <div class="col-md-6">
+                      <label class="form-label">Nama</label>
+                      <input type="text" class="form-control" required />
+                    </div>
+                    <div class="col-md-6">
+                      <label class="form-label">Email</label>
+                      <input type="email" class="form-control" required />
+                    </div>
+                    <div class="col-12">
+                      <label class="form-label">Pesan</label>
+                      <textarea
+                        class="form-control"
+                        rows="4"
+                        required
+                      ></textarea>
+                    </div>
+                    <div class="col-12 text-center mt-4">
+                      <button type="submit" class="btn btn-bb px-4 py-2">
+                        🐚 Kirim Pesan
+                      </button>
+                    </div>
+                  </div>
+                </form>
+              </div>
+            </div>
+          </div>
+        </div>
+      </section>
+    </main>
+
+    <!-- Footer -->
+    <footer class="mt-auto py-4" style="background-color: var(--bb-pastel-sea)">
+      <div class="container text-center">
+        <img src="assets/logo.png" alt="Logo" width="60" class="mb-3" />
+        <p class="footer-text mb-0">
+          © 2024 Bikini Bottom Adoption Center<br />
+          Jl. Nanas Laut No.123, Samudra Pasifik
+        </p>
+      </div>
+    </footer>
+
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/js/bootstrap.bundle.min.js"></script>
+  </body>
+</html>
